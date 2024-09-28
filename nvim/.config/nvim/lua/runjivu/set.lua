@@ -31,13 +31,11 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = '80'
 vim.g.mapleader = ' '
 
+vim.api.nvim_exec ('language en_US', true)
+vim.cmd([[
+  let $LC_CTYPE = 'en_US.UTF-8'
+]])
 
-
-
-
-
-
-
-
-
+vim.opt.mouse = ""
+vim.opt.clipboard="unnamedplus"
 
