@@ -71,6 +71,8 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fzf aws)
+# alt + c for XOS config
+bindkey ç fzf-cd-widget
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,4 +111,3 @@ if [ -z "$TMUX" ]; then
     tmux
   fi
 fi
-
