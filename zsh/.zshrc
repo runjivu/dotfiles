@@ -90,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 alias vi="/opt/homebrew/bin/nvim"
-
+alias k="/opt/homebrew/bin/kubectl"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -111,3 +111,12 @@ if [ -z "$TMUX" ]; then
     tmux
   fi
 fi
+
+# language setting for k9s errors
+LANG="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
