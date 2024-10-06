@@ -3,7 +3,6 @@ require("runjivu.remap")
 require("runjivu.lazy_init")
 -- require("runjivu.pyright")
 
--- remaps for lsp
 
 
 
