@@ -91,6 +91,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 alias vi="/opt/homebrew/bin/nvim"
 alias k="/opt/homebrew/bin/kubectl"
+alias tf="/opt/homebrew/bin/terraform"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -120,3 +121,8 @@ LC_MESSAGES="en_US.UTF-8"
 LC_MONETARY="en_US.UTF-8"
 LC_NUMERIC="en_US.UTF-8"
 LC_TIME="en_US.UTF-8"
+
+
+# which-allowed
+export PATH=/Users/haneul/personal/which-allowed/target/release:$PATH
+

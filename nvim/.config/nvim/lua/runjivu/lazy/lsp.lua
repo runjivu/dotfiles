@@ -27,7 +27,7 @@ return {
 
         require("mason").setup()
         require("mason-lspconfig").setup {
-            ensure_installed = { 'rust_analyzer', 'pyright', 'yamlls', 'codeqlls', 'sqlls' },
+            ensure_installed = { 'rust_analyzer', 'pyright', 'yamlls', 'codeqlls', 'sqlls', 'terraformls' },
             handlers = {
                 function(server_name) -- default handler (optional)
                     require("lspconfig")[server_name].setup({
