@@ -27,7 +27,10 @@ return {
 
         require("mason").setup()
         require("mason-lspconfig").setup {
-            ensure_installed = { 'rust_analyzer', 'pyright', 'yamlls', 'codeqlls', 'sqlls', 'terraformls' },
+            ensure_installed = {
+                'rust_analyzer', 'pyright', 'yamlls',
+                'codeqlls', 'sqlls', 'terraformls', 'tflint'
+            },
             handlers = {
                 function(server_name) -- default handler (optional)
                     require("lspconfig")[server_name].setup({
@@ -46,6 +49,12 @@ return {
                                 }
                             }
                         }
+                    }
+                end,
+                ["terraformls"] = function()
+                    require("lspconfig").terraformls.setup {
+                        capabilities = capabilities,
+                        filetypes = { "terraform", "terraform-vars", "tf" },
                     }
                 end,
                 ["yamlls"] = function()
