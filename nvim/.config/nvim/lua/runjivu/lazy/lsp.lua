@@ -23,12 +23,13 @@ return {
             "force",
             {},
             vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities())
+            cmp_lsp.default_capabilities()
+            )
 
         require("mason").setup()
         require("mason-lspconfig").setup {
             ensure_installed = {
-                'rust_analyzer', 'pyright', 'yamlls',
+                'rust_analyzer', 'pyright', 'yamlls', "lua_ls",
                 'codeqlls', 'sqlls', 'terraformls', 'tflint'
             },
             handlers = {
