@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>")
 
 -- magic block move in visual mode
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")

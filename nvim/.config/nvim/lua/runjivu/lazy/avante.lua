@@ -15,7 +15,7 @@ return {
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-    -- "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+    "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     -- "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
       -- support for image pasting

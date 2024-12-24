@@ -126,3 +126,7 @@ LC_TIME="en_US.UTF-8"
 # which-allowed
 export PATH=/Users/haneul/personal/which-allowed/target/release:$PATH
 
+
+# manpager as nvim 
+export MANPAGER='nvim +Man!'
+
