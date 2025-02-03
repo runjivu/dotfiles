@@ -124,9 +124,27 @@ LC_TIME="en_US.UTF-8"
 
 
 # which-allowed
-export PATH=/Users/haneul/personal/which-allowed/target/release:$PATH
+export PATH="$HOME/personal/which-allowed/target/release:$PATH"
 
 
 # manpager as nvim 
 export MANPAGER='nvim +Man!'
 
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm@12/bin:$PATH"
+
+# Z3 stuff , include in gingko doc later
+export Z3_SYS_Z3_HEADER="/opt/homebrew/opt/z3/include/z3.h"
+export LIBRARY_PATH="/opt/homebrew/lib"
+
+# 
+if [ -d "$HOME/work/scripts" ]; then
+    export PATH="$HOME/work/scripts:$PATH"
+fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+#cd to git root
+alias cg="cd $(git rev-parse --show-toplevel)"
