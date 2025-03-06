@@ -67,6 +67,9 @@ return {
                                 },
                             },
                             yaml = {
+                                trace = {
+                                    server = "verbose",
+                                },
                                 completion = true,
                                 hover = true,
                                 validate = true,
@@ -81,7 +84,7 @@ return {
                                     url = "",
                                 },
                                 schemas = {
-                                    ["kubernetes"] = "*.{yaml,yml}",
+                                    ["kubernetes"] = "*.k8s.{yaml,yml}",
                                     -- JSON & YAML schemas http://schemastore.org/json/
                                     ["https://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
                                     ["https://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}"

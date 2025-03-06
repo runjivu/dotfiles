@@ -148,3 +148,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 #cd to git root
 alias cg="cd $(git rev-parse --show-toplevel)"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/haneul/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
