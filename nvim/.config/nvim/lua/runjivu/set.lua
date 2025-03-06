@@ -36,6 +36,6 @@ vim.cmd([[
   let $LC_CTYPE = 'en_US.UTF-8'
 ]])
 
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
 vim.opt.clipboard="unnamedplus"
 
