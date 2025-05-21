@@ -91,6 +91,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR="nvim"
 alias vi="/opt/homebrew/bin/nvim"
 alias k="/opt/homebrew/bin/kubectl"
 alias tf="/opt/homebrew/bin/terraform"
