@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -92,6 +94,7 @@ source $ZSH/oh-my-zsh.sh
 alias vi="/opt/homebrew/bin/nvim"
 alias k="/opt/homebrew/bin/kubectl"
 alias tf="/opt/homebrew/bin/terraform"
+alias tf-docs="/opt/homebrew/bin/terraform-docs"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -149,6 +152,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 #cd to git root
 alias cg="cd $(git rev-parse --show-toplevel)"
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/haneul/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+#podman as docker
+#alias docker="/opt/homebrew/bin/podman"
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
