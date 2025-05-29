@@ -11,6 +11,19 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- Toggle between helm and yaml filetypes
+vim.keymap.set('n', '<leader>th', function()
+    if vim.bo.filetype == "yaml" then
+        vim.bo.filetype = "helm"
+        vim.cmd("LspRestart")
+        print("Filetype set to helm, LSP restarted")
+    elseif vim.bo.filetype == "helm" then
+        vim.bo.filetype = "yaml"
+        vim.cmd("LspRestart")
+        print("Filetype set to yaml, LSP restarted")
+    end
+end, { desc = "Toggle Helm/YAML filetype" })
+
 -- 여기까지 읽음, 이 밑으로는 아직 못읽음
 
 -- greatest remap ever

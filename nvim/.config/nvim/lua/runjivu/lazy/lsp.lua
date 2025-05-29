@@ -28,7 +28,7 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup {
             ensure_installed = {
-                'rust_analyzer', 'pyright', 'yamlls',
+                'rust_analyzer', 'pyright', 'yamlls', 'helm_ls',
                 'codeqlls', 'sqlls', 'terraformls', 'tflint',
             },
             handlers = {
@@ -57,6 +57,20 @@ return {
                         filetypes = { "terraform", "terraform-vars", "tf" },
                     }
                 end,
+                ["helm_ls"] = function()
+                    require("lspconfig").helm_ls.setup {
+                        capabilities = capabilities,
+                        filetypes = { "helm" },
+                        settings = {
+                            ['helm-ls'] = {
+                                yamlls = {
+                                    path = "yaml-language-server",
+                                },
+                            }
+                        }
+                    }
+                end,
+
                 ["yamlls"] = function()
                     require('lspconfig').yamlls.setup {
                         capabilities = capabilities,
