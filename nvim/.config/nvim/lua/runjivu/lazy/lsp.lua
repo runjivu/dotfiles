@@ -27,6 +27,7 @@ return {
 
         require("mason").setup()
         require("mason-lspconfig").setup {
+	    automatic_enable = false,
             ensure_installed = {
                 'rust_analyzer', 'pyright', 'yamlls', 'helm_ls',
                 'codeqlls', 'sqlls', 'terraformls', 'tflint',
