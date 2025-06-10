@@ -1,8 +1,28 @@
 {
   "mcpServers": {
     "kubernetes": {
-      "command": "npx",
-      "args": ["mcp-server-kubernetes"]
+      "disabled": false,
+      "args": [
+        "mcp-server-kubernetes"
+      ],
+      "command": "npx"
+    },
+    "awslabs.aws-documentation-mcp-server": {
+      "autoApprove": [
+        
+      ],
+      "command": "uvx",
+      "disabled": false,
+      "args": [
+        "awslabs.aws-documentation-mcp-server@latest"
+      ],
+      "env": {
+        "AWS_DOCUMENTATION_PARTITION": "aws",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
     }
-  }
+  },
+  "nativeMCPServers": [
+    
+  ]
 }
