@@ -62,7 +62,7 @@ return {
             },
             sources = {
                 {name = 'path'},
-                {name = 'vim-dadbod-completion'},
+                --{name = 'vim-dadbod-completion'},
                 {name = 'nvim_lsp'},
                 {name = 'nvim_lua'},
                 {name = 'luasnip', keyword_length = 2},
@@ -70,7 +70,7 @@ return {
             },
             formatting = custom_cmp_format({
                 menu = {
-                    ['vim-dadbod-completion'] = '[DB]',
+                  --  ['vim-dadbod-completion'] = '[DB]',
                     buffer                    = '[BUF]',
                     nvim_lsp                  = '[LSP]',
                     nvim_lua                  = '[API]',

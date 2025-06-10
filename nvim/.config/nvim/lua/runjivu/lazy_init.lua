@@ -20,9 +20,9 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "runjivu.lazy" },
-    "tpope/vim-dadbod",
-    "kristijanhusak/vim-dadbod-ui",
-    "kristijanhusak/vim-dadbod-completion",
+    -- "tpope/vim-dadbod",
+    -- "kristijanhusak/vim-dadbod-ui",
+    -- "kristijanhusak/vim-dadbod-completion",
     "sindrets/diffview.nvim",
   },
 
