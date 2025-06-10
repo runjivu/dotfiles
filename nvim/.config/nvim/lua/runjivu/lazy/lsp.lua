@@ -19,15 +19,10 @@ return {
     config = function()
         local cmp_lsp = require("cmp_nvim_lsp")
         -- not sure what da fuq this does
-        local capabilities = vim.tbl_deep_extend(
-            "force",
-            {},
-            vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities())
+        local capabilities = cmp_lsp.default_capabilities()
 
         require("mason").setup()
         require("mason-lspconfig").setup {
-	    automatic_enable = false,
             ensure_installed = {
                 'rust_analyzer', 'pyright', 'yamlls', 'helm_ls',
                 'codeqlls', 'sqlls', 'terraformls', 'tflint',
