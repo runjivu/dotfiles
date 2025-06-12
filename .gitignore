@@ -1,3 +1,8 @@
 karabiner/.config/karabiner/automatic_backups/*
 nvim/.config/nvim/lazy-lock.json
 
+# API Keys and sensitive configuration
+api-keys.conf
+.api-keys
+*.api-keys
+
