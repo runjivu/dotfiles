@@ -1,28 +1,39 @@
 {
-  "mcpServers": {
-    "kubernetes": {
-      "command": "npx",
-      "args": [
-        "mcp-server-kubernetes"
-      ],
-      "disabled": false
-    },
-    "awslabs.aws-documentation-mcp-server": {
-      "env": {
-        "AWS_DOCUMENTATION_PARTITION": "aws",
-        "FASTMCP_LOG_LEVEL": "ERROR"
-      },
-      "autoApprove": [
-        
-      ],
-      "command": "uvx",
-      "args": [
-        "awslabs.aws-documentation-mcp-server@latest"
-      ],
-      "disabled": false
-    }
-  },
   "nativeMCPServers": [
     
-  ]
+  ],
+  "mcpServers": {
+    "awslabs.aws-documentation-mcp-server": {
+      "disabled": true,
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_DOCUMENTATION_PARTITION": "aws"
+      },
+      "command": "uvx",
+      "autoApprove": [
+        "read_documentation",
+        "search_documentation",
+        "recommend"
+      ],
+      "args": [
+        "awslabs.aws-documentation-mcp-server@latest"
+      ]
+    },
+    "kubernetes": {
+      "disabled": false,
+      "command": "npx",
+      "autoApprove": [
+        "explain_resource",
+        "kubectl_context",
+        "kubectl_describe",
+        "kubectl_get",
+        "kubectl_list",
+        "kubectl_logs",
+        "list_api_resources"
+      ],
+      "args": [
+        "mcp-server-kubernetes"
+      ]
+    }
+  }
 }

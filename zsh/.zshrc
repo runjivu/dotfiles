@@ -146,9 +146,6 @@ if [ -d "$HOME/work/scripts" ]; then
     export PATH="$HOME/work/scripts:$PATH"
 fi
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 #cd to git root
 alias cg="cd $(git rev-parse --show-toplevel)"
@@ -158,3 +155,12 @@ alias cg="cd $(git rev-parse --show-toplevel)"
 
 # Amazon Q post block. Keep at the bottom of this file.
 # [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+
+# set anthropic and tavily keys. NEVER COMMIT ACTUAL KEY
+export ANTHROPIC_API_KEY=""
+export TAVILY_API_KEY=""
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
