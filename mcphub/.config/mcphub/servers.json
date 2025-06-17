@@ -3,25 +3,9 @@
     
   ],
   "mcpServers": {
-    "awslabs.aws-documentation-mcp-server": {
-      "disabled": true,
-      "env": {
-        "FASTMCP_LOG_LEVEL": "ERROR",
-        "AWS_DOCUMENTATION_PARTITION": "aws"
-      },
-      "command": "uvx",
-      "autoApprove": [
-        "read_documentation",
-        "search_documentation",
-        "recommend"
-      ],
-      "args": [
-        "awslabs.aws-documentation-mcp-server@latest"
-      ]
-    },
     "kubernetes": {
-      "disabled": false,
       "command": "npx",
+      "disabled": false,
       "autoApprove": [
         "explain_resource",
         "kubectl_context",
@@ -33,6 +17,32 @@
       ],
       "args": [
         "mcp-server-kubernetes"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "autoApprove": [
+        "sequentialthinking"
+      ],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "awslabs.aws-documentation-mcp-server": {
+      "command": "uvx",
+      "autoApprove": [
+        "read_documentation",
+        "search_documentation",
+        "recommend"
+      ],
+      "disabled": true,
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_DOCUMENTATION_PARTITION": "aws"
+      },
+      "args": [
+        "awslabs.aws-documentation-mcp-server@latest"
       ]
     }
   }
