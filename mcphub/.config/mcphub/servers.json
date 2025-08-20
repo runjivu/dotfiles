@@ -1,10 +1,9 @@
 {
-  "nativeMCPServers": [
-    
-  ],
   "mcpServers": {
+    "aws-knowledge-mcp-server": {
+        "url": "https://knowledge-mcp.global.api.aws"
+    },
     "kubernetes": {
-      "command": "npx",
       "disabled": false,
       "autoApprove": [
         "explain_resource",
@@ -15,35 +14,69 @@
         "kubectl_logs",
         "list_api_resources"
       ],
+      "command": "npx",
       "args": [
         "mcp-server-kubernetes"
       ]
     },
     "sequential-thinking": {
-      "command": "npx",
       "autoApprove": [
         "sequentialthinking"
       ],
+      "command": "npx",
       "args": [
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
       ]
     },
+    "use_aws_mcp": {
+      "name": "use_aws_mcp",
+      "env": [
+        
+      ],
+      "timeout": 300,
+      "disabled": false,
+      "command": "use_aws_mcp"
+    },
     "awslabs.aws-documentation-mcp-server": {
-      "command": "uvx",
+      "disabled": true,
+      "env": {
+        "AWS_DOCUMENTATION_PARTITION": "aws",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "args": [
+        "awslabs.aws-documentation-mcp-server@latest"
+      ],
       "autoApprove": [
         "read_documentation",
         "search_documentation",
         "recommend"
       ],
-      "disabled": true,
+      "command": "uvx"
+    },
+    "splunk": {
       "env": {
-        "FASTMCP_LOG_LEVEL": "ERROR",
-        "AWS_DOCUMENTATION_PARTITION": "aws"
+        "VERIFY_SSL": "false",
+        "SPLUNK_PASSWORD": "zha3jcf1fcp.mwy-EKF",
+        "SPLUNK_PORT": "8089",
+        "DEBUG": "true",
+        "SPLUNK_HOST": "hogwarts.coinfra.net",
+        "SPLUNK_SCHEME": "https",
+        "SPLUNK_USERNAME": "mcp_test"
       },
+      "disabled": false,
       "args": [
-        "awslabs.aws-documentation-mcp-server@latest"
-      ]
+        "--directory",
+        "/Users/haneul/work/splunk-mcp",
+        "run",
+        "python",
+        "splunk_mcp.py",
+        "stdio"
+      ],
+      "command": "poetry"
     }
-  }
+  },
+  "nativeMCPServers": [
+    
+  ]
 }
