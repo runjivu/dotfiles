@@ -3,7 +3,9 @@ return {
   build = "npm install",
   config = function()
     local strudel = require("strudel")
-    strudel.setup()
+    strudel.setup({
+        update_on_save = false
+    })
     -- Strudel keymaps
     vim.keymap.set("n", "<leader>sl", strudel.launch, { desc = "Launch Strudel" })
     vim.keymap.set("n", "<leader>sq", strudel.quit, { desc = "Quit Strudel" })
@@ -12,11 +14,11 @@ return {
     vim.keymap.set("n", "<leader>sb", strudel.set_buffer, { desc = "Strudel set current buffer" })
     vim.keymap.set("n", "<leader>sx", strudel.execute, { desc = "Strudel set current buffer and update" })
     -- Auto-update on save for JavaScript/Strudel files
-    vim.api.nvim_create_autocmd("BufWritePost", {
-      pattern = "*.str",
-      callback = function()
-        strudel.update()
-      end,
-    })
+    --vim.api.nvim_create_autocmd("BufWritePost", {
+    --  pattern = "*.str",
+    --  callback = function()
+    --    strudel.update()
+    --  end,
+    --})
   end,
 }
