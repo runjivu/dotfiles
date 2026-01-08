@@ -4,14 +4,12 @@ return {
 	  dependencies = {"nvim-lua/plenary.nvim"},
       lazy = false,
       config = function()
-          vim.keymap.set('n', '<leader>ps', function()
-              builtin.grep_string({ search = vim.fn.input("Grep > ") })
-          end)
           require("telescope").setup({
               defaults = {
                   -- configure to use ripgrep
                   vimgrep_arguments = {
                       "rg",
+                      "-U",
                       "--follow",        -- Follow symbolic links
                       "--hidden",        -- Search for hidden files
                       "--no-heading",    -- Don"t group matches by each file
@@ -19,6 +17,7 @@ return {
                       "--line-number",   -- Show line numbers
                       "--column",        -- Show column numbers
                       "--smart-case",    -- Smart case search
+                      "--multiline",
 
                       -- Exclude some patterns from search
                       "--glob=!**/.git/*",
@@ -65,6 +64,7 @@ return {
               builtin.grep_string({ search = word })
           end)
           vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+          vim.keymap.set('n', '<leader>pg', builtin.live_grep, { desc = 'Telescope live grep' })
           vim.keymap.set("n", "<leader>ps", function()
               builtin.grep_string({ search = vim.fn.input("Grep > ") });
           end)

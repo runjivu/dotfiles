@@ -184,4 +184,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 #  ./"${KREW}" install krew
 #)
 
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+# export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+
+## for cocd
+export PATH="/Users/haneul/work/snippets/tools/cocd/bin:$PATH"
