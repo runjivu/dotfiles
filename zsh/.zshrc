@@ -189,3 +189,6 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 ## for cocd
 export PATH="/Users/haneul/work/snippets/tools/cocd/bin:$PATH"
+
+## for opencode self signed environment
+export NODE_TLS_REJECT_UNAUTHORIZED=0
