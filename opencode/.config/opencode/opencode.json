@@ -1,0 +1,25 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "kubernetes": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "mcp-server-kubernetes"
+      ]
+    }
+  },
+  "permission": {
+    "*": "ask",
+    "webfetch": "allow",
+    "read": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "list": "allow",
+    "todo*": "allow",
+    "question": "allow",
+    "kubernetes_kubectl_get": "allow",
+    "kubernetes_kubectl_describe": "allow"
+  }
+}
