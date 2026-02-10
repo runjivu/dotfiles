@@ -19,6 +19,7 @@
     "list": "allow",
     "todo*": "allow",
     "question": "allow",
+    "bash": "allow",
     "kubernetes_kubectl_get": "allow",
     "kubernetes_kubectl_describe": "allow"
   }

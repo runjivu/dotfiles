@@ -94,6 +94,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 alias vi="/opt/homebrew/bin/nvim"
 alias k="/opt/homebrew/bin/kubectl"
+alias kx="/opt/homebrew/bin/kubectx"
 alias tf="/opt/homebrew/bin/terraform"
 alias tf-docs="/opt/homebrew/bin/terraform-docs"
 # Compilation flags
