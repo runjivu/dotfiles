@@ -10,6 +10,8 @@
       ]
     }
   },
+  "disabled_providers": ["opencode"],
+  "default_agent": "plan",
   "permission": {
     "*": "ask",
     "webfetch": "allow",

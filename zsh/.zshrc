@@ -127,6 +127,8 @@ LC_MONETARY="en_US.UTF-8"
 LC_NUMERIC="en_US.UTF-8"
 LC_TIME="en_US.UTF-8"
 
+alias k9s="/Users/haneul/personal/k9s/execs/k9s"
+
 
 # which-allowed
 export PATH="$HOME/personal/which-allowed/target/release:$PATH"
@@ -151,8 +153,6 @@ fi
 #cd to git root
 alias cg="cd $(git rev-parse --show-toplevel)"
 
-#podman as docker
-#alias docker="/opt/homebrew/bin/podman"
 
 # Amazon Q post block. Keep at the bottom of this file.
 # [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
