@@ -9,7 +9,7 @@ return {
         vim.api.nvim_create_autocmd('FileType', {
             pattern = 'fugitive',
             callback = function()
-                vim.keymap.set('n', 'P', ':Git pushup<CR>', { buffer = true })
+                vim.keymap.set('n', 'p', ':Git pushup<CR>', { buffer = true })
             end,
         })
     end

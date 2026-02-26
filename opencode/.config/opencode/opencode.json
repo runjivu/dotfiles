@@ -10,10 +10,12 @@
       ]
     }
   },
-  "disabled_providers": ["opencode"],
   "default_agent": "plan",
   "permission": {
     "*": "ask",
+    "skill": {
+        "*": "allow",
+    },
     "webfetch": "allow",
     "read": "allow",
     "grep": "allow",
@@ -23,6 +25,7 @@
     "question": "allow",
     "bash": "allow",
     "kubernetes_kubectl_get": "allow",
-    "kubernetes_kubectl_describe": "allow"
+    "kubernetes_kubectl_describe": "allow",
+    "kubernetes_kubectl_log": "allow"
   }
 }

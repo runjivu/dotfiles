@@ -1,0 +1,9 @@
+[user]
+	name = runjivu
+	email = romano31415@gmail.com
+[http]
+	postbuffer = 524288000
+[pull]
+	rebase = true
+[alias]
+	pushup = !git pull --rebase && git push
