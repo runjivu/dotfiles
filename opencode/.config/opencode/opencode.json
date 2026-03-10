@@ -8,6 +8,20 @@
         "npx",
         "mcp-server-kubernetes"
       ]
+    },
+    "neo4j-infra": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uvx",
+        "--native-tls",
+        "mcp-neo4j-cypher",
+        "--db-url", "bolt://localhost:7687",
+        "--username", "neo4j",
+        "--password", "cocoindex",
+        "--database", "neo4j",
+        "--read-only"
+      ]
     }
   },
   "default_agent": "plan",
@@ -26,6 +40,7 @@
     "bash": "allow",
     "kubernetes_kubectl_get": "allow",
     "kubernetes_kubectl_describe": "allow",
-    "kubernetes_kubectl_log": "allow"
+    "kubernetes_kubectl_log": "allow",
+    "neo4j_infra_*": "allow"
   }
 }

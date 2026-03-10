@@ -158,15 +158,15 @@ alias cg="cd $(git rev-parse --show-toplevel)"
 # [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
 # Load API keys from secure config file (ignored by git)
-if [ -f "$HOME/personal/dotfiles/api-keys.conf" ]; then
-    source "$HOME/personal/dotfiles/api-keys.conf"
-else
-    echo "Warning: API keys config file not found at $HOME/personal/dotfiles/api-keys.conf"
-    echo "Please copy api-keys.conf.template to api-keys.conf and add your keys"
-    # Set empty defaults to avoid errors
-    export ANTHROPIC_API_KEY=""
-    export TAVILY_API_KEY=""
-fi
+#if [ -f "$HOME/personal/dotfiles/api-keys.conf" ]; then
+#    source "$HOME/personal/dotfiles/api-keys.conf"
+#else
+#    echo "Warning: API keys config file not found at $HOME/personal/dotfiles/api-keys.conf"
+#    echo "Please copy api-keys.conf.template to api-keys.conf and add your keys"
+#    # Set empty defaults to avoid errors
+#    export ANTHROPIC_API_KEY=""
+#    export TAVILY_API_KEY=""
+#fi
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

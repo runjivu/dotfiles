@@ -10,6 +10,10 @@ return {
             pattern = 'fugitive',
             callback = function()
                 vim.keymap.set('n', 'p', ':Git pushup<CR>', { buffer = true })
+                vim.api.nvim_set_hl(0, "FugitiveWarn", { bg = "#43293a" })
+                vim.schedule(function()
+                    vim.cmd([[syn match FugitiveWarn /\vWARN:.*$/ containedin=@fugitiveSection]])
+                end)
             end,
         })
     end

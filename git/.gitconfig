@@ -7,3 +7,5 @@
 	rebase = true
 [alias]
 	pushup = !git pull --rebase && git push
+[core]
+	hooksPath = .githooks
