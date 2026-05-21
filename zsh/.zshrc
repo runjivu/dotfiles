@@ -153,6 +153,58 @@ fi
 #cd to git root
 alias cg="cd $(git rev-parse --show-toplevel)"
 
+# Git clone bare repository with worktree setup
+# Usage: gcbw <repo-url> [target-dir]
+gcbw() {
+    local repo_url="$1"
+    local target="${2:-$(basename "$repo_url" .git)}"
+    
+    if [[ -z "$repo_url" ]]; then
+        echo "Usage: gcbw <repo-url> [target-dir]"
+        return 1
+    fi
+    
+    echo "📦 Cloning bare repository..."
+    git clone --bare "$repo_url" "$target" || return 1
+    
+    cd "$target"
+    
+    echo "⚙️  Configuring fetch refspec..."
+    git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+    
+    echo "🔍 Detecting default branch..."
+    local default_branch=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
+    
+    if [[ -z "$default_branch" ]]; then
+        # Fallback: query remote for HEAD
+        echo "   Querying remote..."
+        default_branch=$(git ls-remote --symref origin HEAD | head -1 | awk '{print $2}' | sed 's@refs/heads/@@')
+    fi
+    
+    if [[ -z "$default_branch" ]]; then
+        echo "⚠️  Could not detect default branch, using 'main'"
+        default_branch="main"
+    else
+        echo "   Found: $default_branch"
+    fi
+    
+    echo "📥 Fetching all branches..."
+    git fetch origin
+    
+    echo "🌳 Creating worktree for '$default_branch'..."
+    git worktree add "$default_branch" "$default_branch"
+    
+    echo ""
+    echo "✅ Done!"
+    echo "   Bare repo: $(pwd)"
+    echo "   Worktree:  $(pwd)/$default_branch"
+    echo ""
+    echo "Next steps:"
+    echo "   cd $target/$default_branch"
+    
+    cd ..
+}
+
 
 # Amazon Q post block. Keep at the bottom of this file.
 # [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
@@ -193,3 +245,5 @@ export PATH="/Users/haneul/work/snippets/tools/cocd/bin:$PATH"
 
 ## for opencode self signed environment
 export NODE_TLS_REJECT_UNAUTHORIZED=0
+export UV_NATIVE_TLS=true
+
